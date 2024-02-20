@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.mystepicwork.R
+import com.example.mystepicwork.domain.ShopItem
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,8 +18,15 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
         viewModel.shopList.observe(this) {
-            Log.d("MainActivity", it.toString())
+            showList(it)
+            }
         }
-        viewModel.getShopList()
+
+    private fun showList(list: List<ShopItem>){
+
     }
-}
+
+    }
+
+
+
